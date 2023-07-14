@@ -1,0 +1,157 @@
+#home{
+    display: flex;
+    position: relative;
+    width : 100%;
+    height : 100vh;
+    background: linear-gradient(to bottom, #00000074,#00000048) ,url("../../../public/images/oplateau.jpg");
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+#home .box-contain, #home .desc-contain{
+    display: flex;
+    width : 50%;
+    gap : 15px;
+    justify-content: center;
+    align-items: center;
+}
+#home .box-contain .box{
+    display: flex;
+    padding : 6% 2%;
+    flex-direction: column;
+    justify-content: space-between;
+    width : 40%;
+    height: 80%;
+    border-radius: 5px;
+}
+#home .box-contain .box:nth-child(1){
+    background: #ff800080;
+    animation: toDown 1s;
+}
+#home .box-contain .box:nth-child(2){
+    background: #ffffff57;
+    animation: toUp 1s;
+}
+#home .box-contain .box .proposition{
+    color : #fff;
+}
+#home .box-contain .box .proposition h2{
+    margin: 25px 0;
+}
+#home .box-contain .box .proposition p{
+    color : #eee8e8
+}
+#home .box-contain .box .more-info a{
+    position: relative;
+    text-decoration: none;
+    color : #fff;
+}
+#home .box-contain .box .more-info a::before{
+    content: "";
+    position: absolute;
+    bottom : -5px;
+    left : 0;
+    width : 45%;
+    height : 2px;
+    background: #fff;
+    transition: .3s;
+}
+#home .box-contain .box .more-info a:hover:before{
+    width : 70%;
+}
+
+/* Partie description  */
+#home .desc-contain{
+    flex-direction: column;
+}
+#home .desc-contain h1{
+    font-size: 3.4em;
+    margin : 15px 0;
+    color : #fff;
+}
+#home .desc-contain p{
+    color : #f3f3f3;
+}
+#home .desc-contain .discover{
+    margin-top: 20px;
+    width : 100%;
+    text-align: left;
+}
+#home .desc-contain .discover a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap : 15px;
+    font-size: .9em;
+    text-decoration: none;
+    border: 1px solid var(--primary);
+    padding : 10px 20px;
+    color : #ffffff;
+    border-radius: 5px;
+    transition: .4s;
+}
+#home .desc-contain .discover a:hover{
+    background: var(--primary);
+}
+#home .desc-contain .discover a img{
+    width : 20px;
+    transition: .4s;
+}
+#home .desc-contain .discover a:hover img{
+    transform: translateX(5px);
+}
+
+/* Partie responsive  */
+@media (max-width : 850px){
+    #home{
+        flex-direction: column;
+        height : auto;
+    }
+    #home .box-contain{
+        width : 100%;
+        height: 70vh;
+    }
+    #home .desc-contain{
+        padding : 0 2%;
+        width : 100%;
+        height: 60vh;
+    }
+    #home .desc-contain h1{
+        font-size: 2.4em;
+    }
+}
+@media (max-width : 300px){
+    #home .box-contain{
+        margin: 5% 0 15% 0;
+    }
+    #home .box-contain .box{
+        width : 47%;
+    }
+    #home .box-contain .box h2{
+        font-size: 1.1em;
+    }
+    #home .desc-contain h1{
+        font-size: 1.8em;
+    }
+}
+
+
+/* Les partie animations  */
+@keyframes toDown {
+    from{
+        transform: translateY(-10%);
+    }
+    to{
+        transform: translateY(0);
+    }
+}
+
+@keyframes toUp {
+    from{
+        transform: translateY(10%);
+    }
+    to{
+        transform: translateY(0);
+    }
+}

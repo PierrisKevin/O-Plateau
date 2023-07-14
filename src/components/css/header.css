@@ -1,0 +1,139 @@
+:root{
+    --bg : #fff;
+    --primary : #ff8000;
+    --primary2 : #a01652;
+    --primary3 : #e81772;
+    --secondary : #ff8000;
+    --link : #ffffff;
+
+    --radiusValue : 7px;
+}
+
+.header-nav{
+    display: flex;
+    width : 100%;
+    justify-content: space-between;
+    padding : 12px 2%;
+}
+.header-nav .logo p{
+    position: relative;
+    font-weight: bold;
+    font-size: .9em;
+    text-transform: uppercase;
+    color : #fff;
+    margin-left: 27px;
+}
+.header-nav .logo p::before, #home .header-nav .logo p::after{
+    content: "";
+    position: absolute;
+    width : 12px;
+    height: 12px;
+    background : var(--primary);
+    border-radius: 50%;
+}
+.header-nav .logo p::before{
+    left : -16px;
+    top : 15%;
+}
+.header-nav .logo p::after{
+    left : -26px;
+    top : 20%;
+    width : 8px;
+    height: 8px;
+    opacity: .4;
+}
+
+.header-nav .menu{
+    display: flex;
+    position: relative;
+}
+.header-nav .menu a{
+    font-size: .8em;
+    margin : 0 15px;
+    text-decoration: none;
+    color : var(--link);
+    transition: .4s;
+}
+.header-nav .menu a:hover{
+    color: var(--primary);
+}
+.header-nav .menu .login{
+    margin-top: -1.5%;
+    padding : 10px 30px;
+    border: 1px solid var(--primary);
+    border-radius: var(--radiusValue);
+    color : var(--primary)
+}
+.header-nav .menu button{
+    display: none;
+    position: relative;
+    width : 24px;
+    height: 18px;
+    border: none;
+    background: none;
+}
+.header-nav .menu button span{
+    position: absolute;
+    right : 0;
+    width: 100%;
+    height: 3px;
+    background: var(--link);
+    transition: .4s;
+}
+.header-nav .menu button:focus span{
+    background: var(--primary);
+}
+.header-nav .menu button:hover span{
+    background: var(--primary);
+}
+.header-nav .menu button span:nth-child(1){
+    top : 0;
+}
+.header-nav .menu button span:nth-child(2){
+    top: 8px;
+}
+
+.header-nav .menu button span:nth-child(3){
+    bottom: 0;
+}
+
+
+/* Partie responsive  */
+
+
+@media (max-width : 850px){
+    .header-nav{
+        overflow: hidden;
+    }
+    .header-nav.active{
+        overflow: visible;
+    }
+    .header-nav .menu button{
+        display: inline-block;
+        margin-top: 5px;
+        z-index: 8;
+    }
+    .header-nav .menu .link-contain{
+        position: absolute;
+        right : 0;
+        top : 60px;
+        width : 80vw;
+        height : 95vh;
+        transform: translateX(120%);
+        background: var(--primary);
+        border-radius: 20px 0 0 20px;
+        transition: .6s;
+        z-index: 8;
+    }
+    .header-nav .menu .link-contain.active{
+        transform: translateX(20px);
+    }
+    .header-nav .menu .link-contain a{
+        text-align: center;
+        display: block;
+        font-size: 1em;
+        margin : 15px 0;
+    }
+   
+}
+

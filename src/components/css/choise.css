@@ -1,0 +1,56 @@
+#choise{
+    display: flex;
+    flex-direction: column;
+    width : 100%;
+    /* height : 70vw; */
+}
+#choise h1{
+    margin: 5% 0;
+    text-transform: uppercase;
+    text-align: center;
+}
+#choise .card-container{
+    display: flex;
+    justify-content: center;
+    gap : 15px;
+    width : 100%;
+}
+#choise .card-container .card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding : 2.5%;
+    width : 30%;
+    height : 27vw;
+
+}
+#choise .card-container .card .icon{
+    height : 50%;
+}
+#choise .card-container .card .icon img{
+    width : 100%;
+    height: 100%;
+    object-fit: contain;
+}
+#choise .card-container .card .titre h2{
+    margin : 15px 0;
+}
+
+@media (max-width : 850px){
+    #choise .card-container{
+        flex-wrap: wrap;
+    }
+    #choise .card-container .card{
+        width : 45%;
+    }
+}
+@media (max-width : 450px){
+    #choise h1{
+        font-size: 1.5em;
+        margin : 17% 0 12% 0
+    }
+    #choise .card-container .card{
+        width : 95%;
+        height: 40vh;
+    }
+}
